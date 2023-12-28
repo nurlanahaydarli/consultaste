@@ -1,1 +1,0 @@
-# nurlanaheydarli.github.io-sevinc

@@ -1,0 +1,392 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@500&family=Outfit&family=Source+Sans+3:wght@200;400&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.text--bold600 {
+  font-weight: 600 !important;
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 70% !important;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 80% !important;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 95% !important;
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.textLight {
+  color: white !important;
+}
+
+.marginTop10 {
+  margin-top: 10px;
+}
+
+.after-scroll {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.textDark {
+  color: black;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../Fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype"), url("../Fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+header .headerBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+header .header__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+header .header_title {
+  font-size: 54px;
+  font-weight: 600;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin-bottom: 18px;
+  color: white;
+}
+header p {
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 28px;
+  color: white;
+  text-align: center;
+}
+
+.restaurant__info {
+  width: 100%;
+  padding: 50px 0;
+}
+.restaurant__info__title {
+  color: #ff9e63;
+  font-size: 18px;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+.restaurant__info_num {
+  font-size: 65px;
+  font-family: Eczar, Georgia, serif;
+}
+
+.restaurant__cards {
+  width: 100%;
+  padding: 45px 0;
+}
+.restaurant__cards .restaurant__card {
+  width: 100%;
+  padding: 20px 0;
+}
+.restaurant__cards .restaurant__card_item {
+  width: 90%;
+  height: 100%;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.restaurant__cards .restaurant__card_item .restaurant__card_hover {
+  display: none;
+}
+.restaurant__cards .restaurant__card_item img {
+  width: 100%;
+  height: 100%;
+}
+.restaurant__cards .restaurant__card_item:hover img {
+  opacity: 0.2;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover {
+  opacity: 1;
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: inline-block;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #252525;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:before {
+  top: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:after {
+  bottom: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:hover > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:hover > * > *:after {
+  transform: translate3d(0, 0, 0);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:hover > * > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover:hover > * > * > *:after {
+  transform: translate3d(0, 0, 0);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background-color: #252525;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > *:before {
+  left: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > *:after {
+  right: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > *:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 10px;
+  width: 100%;
+  background-color: white;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > *:before {
+  top: 0;
+  transform: translate3d(-105%, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > *:after {
+  bottom: 0;
+  transform: translate3d(105%, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > * > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 10px;
+  background-color: white;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > * > *:before {
+  left: 0;
+  transform: translate3d(0, 105%, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover > * > * > *:after {
+  right: 0;
+  transform: translate3d(0, -105%, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black {
+  position: absolute;
+  display: inline-block;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  overflow: hidden;
+  color: black;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: white;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:before {
+  top: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:after {
+  bottom: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:hover > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:hover > * > *:after {
+  transform: translate3d(0, 0, 0);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:hover > * > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black:hover > * > * > *:after {
+  transform: translate3d(0, 0, 0);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background-color: white;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > *:before {
+  left: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > *:after {
+  right: 0;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > *:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 10px;
+  width: 100%;
+  background-color: black;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > *:before {
+  top: 0;
+  transform: translate3d(-105%, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > *:after {
+  bottom: 0;
+  transform: translate3d(105%, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > * > *:before, .restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > * > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 10px;
+  background-color: black;
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > * > *:before {
+  left: 0;
+  transform: translate3d(0, 105%, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.restaurant__cards .restaurant__card_item:hover .restaurant__card_hover.border__black > * > * > *:after {
+  right: 0;
+  transform: translate3d(0, -105%, 0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+footer {
+  width: 100%;
+  padding: 25px 0;
+}
+footer .footer_main_content {
+  display: flex;
+  margin: 10px 0;
+}
+footer ul {
+  display: flex;
+  list-style: none;
+  position: relative;
+  margin-left: 10px;
+  padding-left: 55px;
+}
+footer ul::before {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 1.2px;
+  background-color: black;
+  left: 5px;
+  top: 35%;
+}
+footer ul a {
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 5px;
+}
+header nav ul li a, header nav ul li button {
+  color: white !important;
+}
